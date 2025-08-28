@@ -260,6 +260,7 @@ img {
     justify-content: space-between;
     color: white;
     padding: 5px 0;
+    font-weight: 500;
 }
 .login {
     display: flex;
