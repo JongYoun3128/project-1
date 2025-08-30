@@ -94,11 +94,13 @@ img {
     margin-bottom: 10px;
     height: 30px;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .password-box {
     margin-bottom: 10px;
     height: 30px;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .member-check {
     width: 100%;
@@ -115,6 +117,7 @@ img {
     margin-bottom: 20px;
     height: 25px;
     border-radius: 5px;
+    padding-left: 10px;
 }
 .mail-box button {
     padding: 0 10px;
