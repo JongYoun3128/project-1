@@ -354,8 +354,8 @@
             </div>
             <div class="footer">
                 <ul class="login">
-                    <li><a href="login.html">로그인</a></li>
-                    <li><a href="membership.html">회원가입</a></li>
+                    <!-- <li><button href="login.html">로그인</button></li>
+                    <li><a href="membership.html">회원가입</a></li> -->
                 </ul>
                 <ul class="footer-text">
                     <li><a href="#">운영</a></li>
@@ -364,6 +364,30 @@
                 </ul>
             </div>
         </div>
-        <script src="script.js"></script>
+
+        <template id="login-template">
+            <li><button>로그아웃</button></li>
+        </template>
+
+        <template id="logout-template">
+            <li><button href="login.html">로그인</button></li>
+            <li><a href="membership.html">회원가입</a></li>
+        </template>
+
+        <script>
+            const login = document.querySelector(".login");
+            const isLogin = localStorage.getItem("isLogin");
+
+            const 로그인템플릿 = document.querySelector("#login-template");
+            const 로그아웃템플릿 = document.querySelector("#logout-template");
+
+            console.log(isLogin);
+
+            if (isLogin == "true") {
+                login.appendChild(로그인템플릿);
+            } else {
+                login.appendChild(로그아웃템플릿);
+            }
+        </script>
     </body>
 </html>
