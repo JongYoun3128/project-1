@@ -30,8 +30,8 @@ const member = async () => {
 
 const login = async () => {
     let formData = {
-        memberId: "test1",
-        password: "1234",
+        memberId: idBox.value,
+        password: passwordBox.value,
     };
 
     const res = await fetch("http://tomhoon.my:12000/api/v1/member/login", {
@@ -43,4 +43,13 @@ const login = async () => {
     });
 
     const 결과 = await res.json();
+    if (결과.status == "success") {
+        alert("로그인이 완료되었습니다");
+        // Cookie, Session, Local Storage
+        localStorage.setItem("isLogin", "true");
+        location.href = "index.html";
+    } else {
+        alert("로그인이 실패하였습니다");
+        localStorage.setItem("isLogin", "false");
+    }
 };

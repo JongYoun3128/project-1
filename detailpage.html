@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="detailpage.css" />
         <title>해연갤러리</title>
     </head>
     <body>
@@ -11,42 +11,54 @@
             <div class="header">
                 <div class="header-flex">
                     <div class="header-logo">
-                        <a href="#"><img src="image/logo.png" alt="" /></a>
+                        <a href="index.html"><img src="image/logo.png" alt="" /></a>
                     </div>
                     <div class="header-btn">
                         <a href="#">개념글</a>
                         <a href="#">메뉴</a>
                     </div>
                 </div>
-                <div class="header-input">
-                    <input type="text" placeholder="검색어를 입력하세요." />
-                    <img src="image/header-icon1.png" alt="" />
+            </div>
+            <div class="detail-title">
+                <h4>프렌치토스트 땡겨서 해먹었는데</h4>
+                <ul class="title-text">
+                    <li>b9fd</li>
+                    <li>2025.09.10 14:37</li>
+                    <li>조회5</li>
+                    <li>내용Skip</li>
+                </ul>
+                <p>※ 642012518</p>
+            </div>
+            <div class="detail-text">
+                <p>지금 보니 버터 유통기한 14년까지였네 ㅠㅠ 저게 왜 아직 굴러다녀ㅠㅠ 별탈 없겠지 젠장</p>
+                <div class="detail-text-btn">
+                    <button>북맠</button>
+                    <button>추천 <span class="red-text">0</span></button>
+                    <button>신고</button>
                 </div>
             </div>
-            <div class="btn">
-                <ul class="btn-list">
-                    <li><a href="#">해연</a></li>
-                    <li><a href="#">중연</a></li>
-                    <li><a href="#">일연</a></li>
-                    <li><a href="#">겜갤</a></li>
-                    <li><a href="#">앨갤</a></li>
-                    <li><a href="#">슾갤</a></li>
-                    <li><a href="#">랖갤</a></li>
-                    <li><a href="#">꿀갤</a></li>
-                    <li><a href="#">전체</a></li>
-                    <li><a href="#">뮤직DB</a></li>
-                    <li><a href="#">무비DB</a></li>
-                    <li><a href="#">이미지</a></li>
-                </ul>
-                <div class="btn-plus">
-                    <a href="addpage.html">글쓰기</a>
+            <div class="detail-comment">
+                <div class="comment-title">
+                    <button class="comment-btn">댓로고침</button>
+                </div>
+                <div class="comment-text">
+                    <p>댓글 작성 권한이 없음</p>
+                </div>
+            </div>
+            <div class="detail-flex">
+                <div class="btn-1">
+                    <button>목록으로</button>
+                </div>
+                <div class="btn-2">
+                    <button>수정</button>
+                    <button>삭제</button>
                 </div>
             </div>
             <div class="text">
                 <div class="text-title">
                     <a href="#">[필독] 해연갤 애니 게시판 입니다.</a>
                 </div>
-                <ul class="text-list">
+               <ul class="text-list">
                     <li>
                         <a href="detailpage.html">
                             <div class="box">
@@ -361,8 +373,8 @@
                 </ul>
             </div>
         </div>
-
-        <template id="login-template">
+        </div>
+          <template id="login-template">
             <li><button id="logout-btn" onclick="logoutBtn()">로그아웃</button></li>
         </template>
 
@@ -370,9 +382,8 @@
             <li><a href="login.html" id="login-btn">로그인</a></li>
             <li><a href="membership.html" id="join-btn">회원가입</a></li>
         </template>
-
         <script>
-            const login = document.querySelector(".login");
+               const login = document.querySelector(".login");
             const isLogin = localStorage.getItem("isLogin");
 
             const 로그인템플릿 = document.getElementById("login-template");
