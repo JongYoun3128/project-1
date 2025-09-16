@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="detailpage.css" />
+        <link rel="stylesheet" href="css/detailpage.css" />
         <title>해연갤러리</title>
     </head>
     <body>
@@ -58,7 +58,7 @@
                 <div class="text-title">
                     <a href="#">[필독] 해연갤 애니 게시판 입니다.</a>
                 </div>
-               <ul class="text-list">
+                <ul class="text-list">
                     <li>
                         <a href="detailpage.html">
                             <div class="box">
@@ -373,8 +373,8 @@
                 </ul>
             </div>
         </div>
-        </div>
-          <template id="login-template">
+
+        <template id="login-template">
             <li><button id="logout-btn" onclick="logoutBtn()">로그아웃</button></li>
         </template>
 
@@ -382,12 +382,13 @@
             <li><a href="login.html" id="login-btn">로그인</a></li>
             <li><a href="membership.html" id="join-btn">회원가입</a></li>
         </template>
+
         <script>
-               const login = document.querySelector(".login");
+            const login = document.querySelector(".login");
             const isLogin = localStorage.getItem("isLogin");
 
             const 로그인템플릿 = document.getElementById("login-template");
-            const 로그아웃템플릿 = document.getElementById("logout-template");
+            const 로그아웃템플릿 = document.getElementById("logout-temsplate");
 
             const logoutBtn = () => {
                 console.log("test");

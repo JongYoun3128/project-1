@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="addpage.css" />
+        <link rel="stylesheet" href="css/addpage.css" />
         <title>해연갤러리</title>
     </head>
     <body>
@@ -34,8 +34,9 @@
                         <p>파일첨부 (용량 제한 20MB)</p>
                     </div>
                     <div class="icon-btn">
-                        <button class="add-file">파일 업로드</button>
+                        <button class="add-file" onclick="addImage()">파일 업로드</button>
                         <button class="add-archive">아카이브 첨부</button>
+                        <input type="file" hidden id="add-file-input" onchange="changeFile(event)" />
                     </div>
                     <div class="icon-flex">
                         <div class="icon-check-box">
@@ -49,7 +50,7 @@
                             </div>
                         </div>
                         <div class="icon-addtext-btn">
-                            <button class="add-text">글 등록</button>
+                            <button class="add-text" onclick="글등록()">글 등록</button>
                         </div>
                     </div>
                 </div>
@@ -66,5 +67,40 @@
                 </ul>
             </div>
         </div>
+        <script>
+            const title = document.querySelector(".title-box");
+            const content = document.querySelector(".add-pagetext");
+
+            const addImage = () => {
+                const fileInput = document.querySelector("#add-file-input");
+                fileInput.click();
+            };
+            const changeFile = (e) => {
+                console.log("e >>> ", e.target.files[0]);
+
+                // api로 이미지 POST해줌
+                // api에서 이미지 경로받음
+                // 이미지경로 전역변수로 저장해놓음
+            };
+
+            const 글등록 = async () => {
+                // 전역변수의 제목,내용,이미지경로 갖고옴
+                // api post 날림
+                // 성공이면 index.html로감
+                // 실패면 alert 띄움
+
+                const formData = new FormData();
+                formData.append("title", title.value);
+                formData.append("content", content.value);
+                formData.append("file", files[0]);
+
+                const res = fetch("http://tomhoon.my:12000/api/v1/board/addBoard", {
+                    method: "POST",
+                    body: formData,
+                });
+                const 결과 = await res.json();
+                console.log(글등록());
+            };
+        </script>
     </body>
 </html>
